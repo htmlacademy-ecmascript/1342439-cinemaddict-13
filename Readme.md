@@ -1,7 +1,7 @@
 # Проект «Киноман» [![Build status][travis-image]][travis-url]
 
 * Студент: [Alexandra Crudu](https://up.htmlacademy.ru/ecmascript/13/user/1342439).
-* Наставник: `Неизвестно`.
+* Наставник: [Саша Джинн](https://htmlacademy.ru/profile/jinonensk).
 
 ---
 
