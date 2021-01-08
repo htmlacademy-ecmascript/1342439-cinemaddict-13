@@ -7,7 +7,6 @@ export const createFilmsTemplate = () => {
       </h2>
       <div class="films-list__container">
       </div>
-      <button class="films-list__show-more">Show more</button>
     </section>
   </section>`;
 };
