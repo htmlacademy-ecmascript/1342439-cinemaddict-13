@@ -1,4 +1,4 @@
-import {makeComments} from "../mock/comments.js";
+// import {makeComments} from "../mock/comments.js";
 
 const makeTemplateComment = function (commentInfo) {
   const {
@@ -27,8 +27,8 @@ const makeTemplateComment = function (commentInfo) {
 const makeGenreTemplate = function (genreItem) {
   return (
     `<span class="film-details__genre">${genreItem}</span>`
-  )
-}
+  );
+};
 
 export const makeFilmInformationTemplate = function (film) {
   const {
@@ -38,10 +38,7 @@ export const makeFilmInformationTemplate = function (film) {
     year,
     duration,
     genres,
-    description,
-    commentsNumber,
     comments,
-    isWatchList,
     isWatched,
     isFavorite,
     age,

@@ -16,7 +16,6 @@ const TEMP_EXTRA_FILM_COUNT = 2;
 const PLACE_BEFOREEND = `beforeend`;
 
 const films = new Array(TEMP_FILM_COUNT).fill().map(makeFilm);
-console.log(films)
 const filters = makeFilter(films);
 
 
