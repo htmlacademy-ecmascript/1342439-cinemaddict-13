@@ -45,5 +45,4 @@ const comment = () => {
 
 export const makeComments = () => {
   return new Array(getRandomInteger(0, 9)).fill().map(comment);
-  console.log(generateComments)
 };
