@@ -34,7 +34,7 @@ const generateCommentDescription = function () {
   return Array.from(description).join(` `);
 };
 
-const comment = () => {
+const getcomment = () => {
   return {
     comment: generateCommentDescription(),
     emoji: randomEmoji(),
@@ -44,5 +44,5 @@ const comment = () => {
 };
 
 export const makeComments = () => {
-  return new Array(getRandomInteger(0, 9)).fill().map(comment);
+  return new Array(getRandomInteger(0, 9)).fill().map(getcomment);
 };

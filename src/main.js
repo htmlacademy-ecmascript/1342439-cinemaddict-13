@@ -55,10 +55,18 @@ if (films.length > TEMP_FILM_ONE_STEP) {
 
   filmsMoreShow.addEventListener(`click`, (evt) => {
     evt.preventDefault();
-    films.slice(renderedFilmCount, renderedFilmCount + TEMP_FILM_ONE_STEP).forEach(() => render(siteFilmsListContainer, createCardFilmTemplate(films), PLACE_BEFOREEND));
+    const paginatedFilmList = films.slice(renderedFilmCount, renderedFilmCount + TEMP_FILM_ONE_STEP);
+
+
+    let filmsFragment = document.createDocumentFragment();
+
+    paginatedFilmList.forEach((film) => filmsFragment.append(createCardFilmTemplate(film)));
     renderedFilmCount += TEMP_FILM_ONE_STEP;
 
-    if (renderedFilmCount >= films.length) {
+
+    render(siteFilmsListContainer, filmsFragment.textContent, PLACE_BEFOREEND);
+
+    if (renderedFilmCount >= paginatedFilmList.length) {
       filmsMoreShow.remove();
     }
   });

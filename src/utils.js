@@ -6,7 +6,7 @@ export const getRandomInteger = (a = 0, b = 1) => {
 };
 
 export const getRandomIndex = function (list) {
-  const randomIndex = getRandomInteger(0, list.length);
+  const randomIndex = getRandomInteger(0, list.length - 1);
 
   return list[randomIndex];
 };

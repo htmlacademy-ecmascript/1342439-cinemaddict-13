@@ -1,20 +1,6 @@
 import {favorite, watched, watchList} from "../utils";
 
-export const createCardFilmTemplate = (film) => {
-  const {
-    poster,
-    title,
-    rating,
-    year,
-    duration,
-    genres,
-    description,
-    comments,
-    isWatchList,
-    isWatched,
-    isFavorite,
-  } = film;
-
+export const createCardFilmTemplate = ({poster, title, rating, year, time, genre, description, comments, isWatchList, isWatched, isFavorite}) => {
   const commentsCount = comments.length;
 
   const commentsName = commentsCount === 1 ? `Comment` : `Comments`;
@@ -26,8 +12,8 @@ export const createCardFilmTemplate = (film) => {
     <p class="film-card__rating">${rating}</p>
     <p class="film-card__info">
       <span class="film-card__year">${year}</span>
-      <span class="film-card__duration">${duration}</span>
-      <span class="film-card__genre">${genres}</span>
+      <span class="film-card__duration">${time}</span>
+      <span class="film-card__genre">${genre}</span>
     </p>
     <img src="${poster}" alt="" class="film-card__poster">
     <p class="film-card__description">${description}</p>

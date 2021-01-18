@@ -30,22 +30,7 @@ const makeGenreTemplate = function (genreItem) {
   );
 };
 
-export const makeFilmInformationTemplate = function (film) {
-  const {
-    poster,
-    title,
-    rating,
-    year,
-    duration,
-    genres,
-    comments,
-    isWatched,
-    isFavorite,
-    age,
-    director,
-    actors,
-    country
-  } = film;
+export const makeFilmInformationTemplate = function ({poster, title, rating, year, duration, genres, comments, isWatched, isFavorite, age, director, actors, country}) {
 
   const commentItems = comments.map((commentInfo, index) => makeTemplateComment(commentInfo, index === 0)).join(``);
 

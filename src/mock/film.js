@@ -2,6 +2,16 @@ import {getRandomInteger} from "../utils.js";
 import {getRandomIndex} from "../utils.js";
 import {makeComments} from "./comments.js";
 
+const MIN_YEAR = 1997;
+const MAX_YEAR = 2019;
+const MIN_RATING = 2;
+const MAX_RATING = 10;
+const MAX_COOMENTS = 5;
+const MAX_AGE = 18;
+const BOOLEAN_FALSE = 0;
+const BOOLEAN_TRUE = 1;
+const MAX_ACTORS = 6;
+
 const posters = [
   `./images/posters/made-for-each-other.png`,
   `./images/posters/popeye-meets-sinbad.png`,
@@ -102,7 +112,7 @@ const generateActors = function () {
 
   const actors = new Set();
 
-  for (let i = 0; i < getRandomInteger(3, allActors.length); i++) {
+  for (let i = 0; i < getRandomInteger(MAX_ACTORS, allActors.length); i++) {
     actors.add(allActors[getRandomInteger(0, allActors.length - 1)]);
   }
 
@@ -123,18 +133,18 @@ export const makeFilm = function () {
     poster: getRandomIndex(posters),
     time: getRandomIndex(time),
     title: getRandomIndex(titles),
-    year: getRandomInteger(1997, 2019),
-    rating: getRandomInteger(2, 10),
+    year: getRandomInteger(MIN_YEAR, MAX_YEAR),
+    rating: getRandomInteger(MIN_RATING, MAX_RATING),
     genre: getRandomIndex(genre),
-    commentsNumber: getRandomInteger(0, 5),
+    commentsNumber: getRandomInteger(0, MAX_COOMENTS),
     description: makeDescription(),
     comments: makeComments(),
-    age: `+` + getRandomInteger(0, 18),
+    age: `+` + getRandomInteger(0, MAX_AGE),
     director: getRandomIndex(directors),
     actors: generateActors(),
     country: getRandomIndex(country),
-    isWatched: Boolean(getRandomInteger(0, 1)),
-    isWatchList: Boolean(getRandomInteger(0, 1)),
-    isFavorite: Boolean(getRandomInteger(0, 1))
+    isWatched: Boolean(getRandomInteger(BOOLEAN_FALSE, BOOLEAN_TRUE)),
+    isWatchList: Boolean(getRandomInteger(BOOLEAN_FALSE, BOOLEAN_TRUE)),
+    isFavorite: Boolean(getRandomInteger(BOOLEAN_FALSE, BOOLEAN_TRUE))
   };
 };
